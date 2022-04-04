@@ -1,0 +1,9 @@
+version: "2"
+services:
+  Sistemadetrocadeitens-postgresql:
+    image: postgres:11.5
+    environment:
+      - POSTGRES_USER=Sistemadetrocadeitens
+      - POSTGRES_PASSWORD=1234
+    ports:
+      - 5432:5432

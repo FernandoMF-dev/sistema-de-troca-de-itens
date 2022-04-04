@@ -1,0 +1,15 @@
+<form (ngSubmit)="login()" [formGroup]="form" class="form-login">
+    <div class="ui-fluid">
+        <div class="p-field">
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" pInputText type="email">
+        </div>
+        <div class="p-field">
+            <label for="token">Token</label>
+            <input formControlName="token" id="token" pInputText type="text">
+        </div>
+    </div>
+
+    <button [disabled]="form.invalid || submit" label="Logar" pButton type="submit"></button>
+    <button (click)="cadastrarUsuario()" label="Cadastrar" pButton type="button"></button>
+</form>

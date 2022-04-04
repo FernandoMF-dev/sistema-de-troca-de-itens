@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	<changeSet id="20210504091000" author="Fernando">
+		<insert tableName="tb_situacao">
+			<column name="id" value="1"/>
+			<column name="descricao" value="Aberta"/>
+		</insert>
+		<insert tableName="tb_situacao">
+			<column name="id" value="2"/>
+			<column name="descricao" value="Concluida"/>
+		</insert>
+		<insert tableName="tb_situacao">
+			<column name="id" value="3"/>
+			<column name="descricao" value="Cancelada"/>
+		</insert>
+		<insert tableName="tb_situacao">
+			<column name="id" value="4"/>
+			<column name="descricao" value="Recusada"/>
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>

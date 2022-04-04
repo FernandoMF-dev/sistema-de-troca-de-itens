@@ -1,0 +1,49 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	<changeSet id="202104290022" author="Savio">
+		<createTable tableName="tb_item">
+			<column name="id" type="int">
+				<constraints primaryKey="true" nullable="false"></constraints>
+			</column>
+			<column name="nome" type="varchar(100)">
+				<constraints nullable="false"></constraints>
+			</column>
+			<column name="descricao" type="varchar(255)">
+				<constraints nullable="false"></constraints>
+			</column>
+			<column name="imagem" type="blob">
+				<constraints nullable="false"></constraints>
+			</column>
+			<column name="id_categoria" type="int">
+				<constraints nullable="false"></constraints>
+			</column>
+			<column name="disponibilidade" type="boolean">
+				<constraints nullable="false"></constraints>
+			</column>
+			<column name="id_usuario" type="int">
+				<constraints nullable="false"></constraints>
+			</column>
+		</createTable>
+		<createSequence incrementBy="1"
+						sequenceName="seq_tb_item"
+						startValue="1"/>
+
+		<addForeignKeyConstraint baseTableName="tb_item"
+								 baseColumnNames="id_categoria"
+								 referencedTableName="tb_categoria"
+								 referencedColumnNames="id"
+								 constraintName="fk_item_categoria"
+		/>
+		<addForeignKeyConstraint baseTableName="tb_item"
+								 baseColumnNames="id_usuario"
+								 referencedTableName="tb_usuario"
+								 referencedColumnNames="id"
+								 constraintName="fk_item_usuario"
+		/>
+	</changeSet>
+
+</databaseChangeLog>

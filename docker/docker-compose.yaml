@@ -1,0 +1,19 @@
+version: "2"
+services:
+  Sistemadetrocadeitens-postgresql:
+    extends:
+      file: Sistemadetrocadeitens-postgresql.yaml
+      service: Sistemadetrocadeitens-postgresql
+    container_name: Sistemadetrocadeitens-postgresql
+    
+  rabbitmq:
+    extends:
+      file: rabbitmq.yaml
+      service: rabbitmq
+    container_name: rabbitmq
+
+  elasticsearch:
+    extends:
+      file: elasticsearch.yaml
+      service: elasticsearch
+    container_name: elasticsearch

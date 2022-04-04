@@ -1,0 +1,54 @@
+<h3>LISTAGEM DE ITENS</h3>
+<a routerLink="cadastro">
+    <button label="CADASTRAR ITEM" pButton type="button"></button>
+</a>
+<p-dataView #dv [paginator]="true" [rows]="20" [sortField]="sortField" [sortOrder]="sortOrder" [value]="itens"
+            filterBy="nome" paginatorPosition="both">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <div class="p-grid">
+                <div class="p-col-12 p-md-4">
+                    <p-dropdown (onChange)="onSortChange($event)" [(ngModel)]="sortKey" [options]="sortOptions"
+                                [style]="{'min-width':'140px'}" placeholder="Sort By"></p-dropdown>
+                </div>
+                <div class="p-col-6 p-md-4 filter-container">
+                    <div style="position:relative">
+                        <input (input)="dv.filter($event.target.value)" pInputText placeholder="Buscar por nome"
+                               type="search">
+                    </div>
+                </div>
+                <div class="p-col-6 p-md-4" style="text-align:right">
+                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                </div>
+            </div>
+        </div>
+    </p-header>
+    <ng-template class="listagem-list" let-item pTemplate="listItem">
+        <div class="p-col-12">
+            <div class="car-details">
+                <div>
+                    <img [src]="item.imagem" class="center-img">
+                    <div class="p-grid">
+                        <div class="p-col-12">NOME:&nbsp;<strong>{{ item.nome }}</strong></div>
+                        <div class="p-col-12">DONO:&nbsp;<strong>{{ item.usuarioId }}</strong></div>
+                        <div class="p-col-12">CATEGORIA:&nbsp;<strong>{{ item.categoriaId }}</strong></div>
+                        <div *ngIf="item.disponibilidade" class="p-col-12">DISPONIBILIDADE:&nbsp;<strong>Disponível para
+                            trocas</strong></div>
+                        <div *ngIf="!item.disponibilidade" class="p-col-12">DISPONIBILIDADE:&nbsp;<strong>Indisponível
+                            para troca</strong></div>
+                        <div class="p-col-12">DESCRICAO:&nbsp;<strong>{{ item.descricao }}</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </ng-template>
+    <ng-template class="listagem-grid" let-item pTemplate="gridItem">
+        <div class="p-col-12 p-md-3" style="padding:.5em">
+            <p-panel [header]="item.nome" [style]="{'text-align':'center'}">
+                <img [src]="item.imagem" class="center-img">
+                <div class="car-detail">{{ item.nome }} - {{ item.categoriaId }}</div>
+            </p-panel>
+        </div>
+    </ng-template>
+</p-dataView>

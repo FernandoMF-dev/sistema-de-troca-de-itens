@@ -1,0 +1,74 @@
+<h3>INVENTARIO</h3>
+
+<p-dataView #dv [paginator]="true" [rows]="20" [sortField]="sortField" [sortOrder]="sortOrder" [value]="itens"
+            filterBy="nome" paginatorPosition="both">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <div class="p-grid">
+                <div class="p-col-12 p-md-4">
+                    <p-dropdown (onChange)="onSortChange($event)" [(ngModel)]="sortKey" [options]="sortOptions"
+                                [style]="{'min-width':'140px'}" placeholder="Sort By"></p-dropdown>
+                </div>
+                <div class="p-col-6 p-md-4 filter-container">
+                    <div style="position:relative">
+                        <input (input)="dv.filter($event.target.value)" pInputText placeholder="Buscar por nome"
+                               type="search">
+                    </div>
+                </div>
+                <div class="p-col-6 p-md-4" style="text-align:right">
+                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                </div>
+            </div>
+        </div>
+    </p-header>
+    <ng-template class="listagem-list" let-item pTemplate="listItem">
+        <div class="p-col-12">
+            <div class="car-details">
+                <div>
+                    <img [src]="item.imagem" class="center-img">
+                    <div class="p-grid">
+                        <div class="p-col-12">NOME:&nbsp;<b>{{ item.nome }}</b></div>
+                        <div class="p-col-12">DONO:&nbsp;<b>{{ item.usuarioId }}</b></div>
+                        <div class="p-col-12">CATEGORIA:&nbsp;<b>{{ item.categoriaId }}</b></div>
+                        <div *ngIf="item.disponibilidade" class="p-col-12">DISPONIBILIDADE:&nbsp;<b>Disponível para
+                            trocas</b></div>
+                        <div *ngIf="!item.disponibilidade" class="p-col-12">DISPONIBILIDADE:&nbsp;<b>Indisponível para
+                            troca</b></div>
+                        <div class="p-col-12">DESCRICAO:&nbsp;<b>{{ item.descricao }}</b></div>
+                    </div>
+                </div>
+                <button (click)="selectItem($event, item)" icon="pi pi-search" pButton type="button"></button>
+                <button (click)="alterarItem($event, item)" icon="pi pi-pencil" label="editar" pButton
+                        type="button"></button>
+            </div>
+        </div>
+        <hr>
+    </ng-template>
+    <ng-template class="listagem-grid" let-item pTemplate="gridItem">
+        <div class="p-col-12 p-md-3" style="padding:.5em">
+            <p-panel [header]="item.nome" [style]="{'text-align':'center'}">
+                <img [src]="item.imagem" class="center-img">
+                <div class="car-detail">{{ item.nome }} - {{ item.categoriaId }}</div>
+                <button (click)="selectItem($event, item)" icon="pi pi-search" pButton style="margin-top:0"
+                        type="button"></button>
+            </p-panel>
+        </div>
+    </ng-template>
+</p-dataView>
+
+
+<p-dialog (onAfterHide)="onDialogHide()" [(visible)]="displayDialog" [contentStyle]="{padding: '2em', textAlign: 'center'}" [minY]="70" [modal]="true"
+          [style]="{width: '80vw'}" header="Detalhes do Item"
+          showEffect="fade">
+    <div *ngIf="selectedItem">
+        <img [src]="selectedItem.imagem" height="205" width="320">
+        <br>
+        <strong>Nome: {{ selectedItem.nome }} - Categoria: {{ selectedItem.categoriaId }}</strong>
+        <p>
+            <strong>Descrição: </strong>
+            {{ selectedItem.descricao }}
+        </p>
+    </div>
+</p-dialog>
+
+<app-alterar-itens #dialogItem (atualizou)="onAtualizou($event)"></app-alterar-itens>

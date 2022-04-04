@@ -1,0 +1,40 @@
+<p-dialog #dialogItem (onHide)="fecharModal()" [(visible)]="displayBasic" [baseZIndex]="10000" [style]="{width: '60vw'}"
+          header="Alterar">
+    <form (ngSubmit)="alterar()" [formGroup]="form">
+        <h3>ALTERAR ITEM</h3>
+        <div class="ui-fluid">
+            <div class="p-field">
+                <label for="nome">Nome</label>
+                <input formControlName="nome" id="nome" pInputText type="text">
+            </div>
+            <div class="p-field">
+                <label for="descricao">Descricao</label>
+                <textarea cols="30" formControlName="descricao" pInputTextarea rows="3"></textarea>
+            </div>
+            <br>
+            <div>
+                <h4>Situação do seu item</h4>
+                <input [value]="true" formControlName="disponibilidade" id="disponivel" type="radio">
+                <label for="disponivel">DISPONÍVEL</label><br>
+                <input [value]="false" formControlName="disponibilidade" id="indisponivel" type="radio">
+                <label for="indisponivel">INDISPONÍVEL</label><br>
+            </div>
+            <br>
+            <div>
+                <h4>Categoria do item</h4>
+                <input formControlName="categoriaId" pInputText type="number">
+            </div>
+            <br>
+            <div>
+                <h4>Insira a imagem do item</h4>
+                <p-fileUpload (onSelect)="uploadImagem($event)" accept="image/*" customUpload="true" maxFileSize="1500000" mode="basic"
+                              name="imagem[]"></p-fileUpload>
+            </div>
+        </div>
+        <p>
+            <p-footer>
+                <button label="ALTERAR" pButton type="submit"></button>
+            </p-footer>
+        </p>
+    </form>
+</p-dialog>

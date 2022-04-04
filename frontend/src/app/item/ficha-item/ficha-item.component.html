@@ -1,0 +1,9 @@
+<div *ngIf="item">
+    <img alt="Imagem de item" src="{{ item.imagem }}" width="200">
+    <section>
+        <p>NOME:&nbsp;<strong>{{ item.nome }}</strong></p>
+        <p>CATEGORIA:&nbsp;<strong>{{ item.categoriaId }}</strong></p>
+        <p>DONO:&nbsp;<strong>{{ item.usuarioId }}</strong></p>
+        <p>DESCRICAO:&nbsp;<strong>{{ item.descricao }}</strong></p>
+    </section>
+</div>

@@ -1,0 +1,55 @@
+application:
+  appName: Sistemadetrocadeitens
+mail:
+  endereco-remetente: turmaformgsf@gmail.com
+  nome-remetente: Turma de Formacao
+
+spring:
+  application:
+    name: Sistemadetrocadeitens
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/Sistemadetrocadeitens
+    username: Sistemadetrocadeitens
+    password: 1234
+  jackson:
+    date-format: yyyy-MM-dd
+    deserialization:
+      fail-on-unknown-properties: false
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    database: postgresql
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  liquibase:
+    change-log: classpath:/config/liquibase/master.xml
+  #        drop-first: true
+  mail:
+
+    host: smtp.gmail.com
+    port: 587
+    username: turmaformgsf@gmail.com
+    password: ocdmvmor123
+    properties:
+      mail:
+        smtp:
+          host: smtp.gmail.com
+          auth: true
+          port: 465
+          socketFactory:
+            port: 465
+            fallback: false
+            class: javax.net.ssl.SSLSocketFactory
+          starlls:
+            enable: true
+            required: true
+          quitwait: false
+  server:
+    port: 8080

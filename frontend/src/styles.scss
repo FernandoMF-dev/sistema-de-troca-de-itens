@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+.layout-container .topbar {
+    background-color: #0075ff !important;
+}
+
+.layout-container .topbar .topbar-left {
+    background-color: #004595 !important;
+}
+
+.ui-dataview .ui-dataview-header {
+    background-color: #f4f4f4 !important;
+    color: #333333 !important;
+    border: 1px solid #c8c8c8 !important;
+    padding: 0.571em 1em !important;
+    font-weight: 700 !important;
+    border-bottom: 0 none !important;
+}
+
+.ui-widget {
+    font-family: "Open Sans", "Helvetica Neue", sans-serif !important;
+    font-size: 14px !important;
+    text-decoration: none !important;
+}
+
+.ui-inputtext {
+    background: #ffffff !important;
+    padding: 0.5em !important;
+    border: 1px solid #a6a6a6 !important;
+    border-radius: 5px !important;
+}
+
+.ui-dropdown {
+    min-width: 140px !important;
+    background-color: white !important;
+    border-radius: 5px !important;
+    border: 1px solid #a6a6a6 !important;
+    background-image: none !important;
+}
+
+.ui-dropdown .ui-dropdown-label {
+    display: block !important;
+    border: none !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    padding-right: 2.5em !important;
+    font-weight: 400 !important;
+}
+
+.ui-dropdown .ui-dropdown-trigger {
+    top: 6px !important;
+    right: 6px !important;
+}
+
+body .ui-dataview .ui-dataview-content {
+    padding: 10px;
+}
+
+body .ui-widget-overlay {
+    background-color: transparent;
+    opacity: 1;
+}
+
+.p-nogutter {
+    background-color: rgb(165, 240, 245);
+    border: 1px solid rgb(0, 0, 0);
+    text-align: center;
+    margin: 0 2.5px;
+    padding: 10px;
+    border-radius: 5px;
+}

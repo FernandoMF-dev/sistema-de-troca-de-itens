@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+		xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	<changeSet id="20210504091700" author="Fernando">
+		<insert tableName="tb_categoria">
+			<column name="id" value="1"/>
+			<column name="descricao" value="Buggy"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="2"/>
+			<column name="descricao" value="Caminhão"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="3"/>
+			<column name="descricao" value="Conversível"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="4"/>
+			<column name="descricao" value="Crossover"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="5"/>
+			<column name="descricao" value="Cupê"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="6"/>
+			<column name="descricao" value="De Corrida"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="7"/>
+			<column name="descricao" value="Esportivo"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="8"/>
+			<column name="descricao" value="Exótico"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="9"/>
+			<column name="descricao" value="Hatchback"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="10"/>
+			<column name="descricao" value="Hot rod"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="11"/>
+			<column name="descricao" value="Jipe"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="12"/>
+			<column name="descricao" value="Limusine"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="13"/>
+			<column name="descricao" value="Lowrider"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="14"/>
+			<column name="descricao" value="Luxo"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="15"/>
+			<column name="descricao" value="Minicarro"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="16"/>
+			<column name="descricao" value="Minivan"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="17"/>
+			<column name="descricao" value="Motocicleta"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="18"/>
+			<column name="descricao" value="Muscle car"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="19"/>
+			<column name="descricao" value="Ônibus"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="20"/>
+			<column name="descricao" value="Picape"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="21"/>
+			<column name="descricao" value="Sedan"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="22"/>
+			<column name="descricao" value="Supercarro"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="23"/>
+			<column name="descricao" value="SUV"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="24"/>
+			<column name="descricao" value="Três Rodas"/>
+		</insert>
+		<insert tableName="tb_categoria">
+			<column name="id" value="25"/>
+			<column name="descricao" value="Wagon"/>
+		</insert>
+	</changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,21 @@
+.filter-container {
+    text-align: center;
+}
+
+.car-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-bottom: 1px solid rgb(217, 218, 217);
+}
+
+.car-details div {
+    display: flex;
+    align-items: center;
+}
+
+.center-img {
+    width: 300px;
+    margin-right: 14px;
+}
